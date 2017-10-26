@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			background: #323232;
+			font-size: 12px;
+			font-family: '微软雅黑';
+			padding: 100px;
+		}
+		.tab{
+			width: 300px;
+		}
+		.tab .tab-nav{
+			height: 30px;
+		}
+		.tab .tab-nav li{
+			float: left;
+			margin-right: 5px;
+			background-color: #767676;
+			border-radius: 3px 3px 0 0;
+			list-style: none;
+		}
+		.tab .tab-nav li a{
+			display: block;
+			height: 30px;
+			padding: 0 20px;
+			color: #fff;
+			line-height: 30px;
+			text-decoration: none;
+		}
+		
+		.tab .tab-nav li.active a{
+			color: #000;
+			background: #fff;
+			border-radius: 3px 3px 0 0;
+		}
+		.tab .content-wrap{
+			background-color: #fff;
+			padding: 5px;
+			height: 200px;
+		}
+		.tab .content-wrap img{
+			width: 290px;
+			height: 190px;
+		}
+		.tab .content-wrap .content-item{
+			display: none;
+			height: 200px;
+			position: absolute;
+
+		}
+		.tab .content-wrap .current{
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<div class="js-tab tab" data-config='{
+	"triggerType":"click",
+	"effect":"fade",
+	"invoke":2,
+	"auto":1000
+	}'>
+		<ul class="tab-nav">
+			<li class="active"><a href="#">新闻</a></li>
+			<li><a href="#">娱乐</a></li>
+			<li><a href="#">科技</a></li>
+			<li><a href="#">电影</a></li>
+		</ul>
+		<div class="content-wrap">
+			<div class="content-item current"><img src="../images/01.jpg"></div>
+			<div class="content-item"><img src="../images/02.jpg"></div>
+			<div class="content-item"><img src="../images/03.jpg"></div>
+			<div class="content-item"><img src="../images/04.jpg"></div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="http://s0.qhimg.com/lib/jquery/183.js"></script>
+<script type="text/javascript" src="tab.js"></script>
+<script type="text/javascript">
+	$(function(){
+		Tab.init($(".js-tab"));
+	});
+</script>
+</html>
